@@ -1,0 +1,16 @@
+<!-- src/app/components/product/product.component.html -->
+
+<!-- El ng-container no genera etiquetas HTML, solo se usa como contenedor de Angular para renderizar -->
+<!-- Usamos *ngIf para comprobar si se renderiza el producto o no -->
+
+<ng-container *ngIf="product"> <!-- Si se renderizó -->
+  <h2>{{ product.title }}</h2>
+  <p><b>Price:</b> {{ product.price }}</p>
+  <p><b>Category:</b> {{ product.category }}</p>
+  <p><b>Description:</b> {{ product.description }}</p>
+  <img [src]="product.image" alt="{{ product.title }}" />
+</ng-container>
+
+<ng-container *ngIf="!product"> <!-- No se renderizó -->
+  Producto no renderizado
+</ng-container>
