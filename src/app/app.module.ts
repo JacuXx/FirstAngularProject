@@ -9,23 +9,27 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';  // ← 
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { NavigationComponent } from './component/navigation/navigation.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardModule }     from '@angular/material/card';
+import { MatButtonModule }   from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // necesario para Material
+import { LayoutModule } from '@angular/cdk/layout';                             // opcional para responsive
+import { CatalogueComponent } from './components/catalogue/catalogue.component'; // <-- nueva importación
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     NavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    CatalogueComponent    // <-- nueva declaración
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    BrowserAnimationsModule,
+    LayoutModule
   ],
   bootstrap: [AppComponent],
   providers: [

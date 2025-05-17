@@ -1,1 +1,6 @@
-<p>catalogue works!</p>
+<h2>{{ title }}</h2>
+<mat-grid-list cols="2" rowHeight="500px" gutterSize="16px">
+  <mat-grid-tile *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
+  </mat-grid-tile>
+</mat-grid-list>

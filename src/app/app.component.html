@@ -1,11 +1,2 @@
-<!-- src/app/app.component.html -->
-
-<!-- Recordemos que {{}} se usa para interpolar en TypeScript -->
-<h1>{{ title }}</h1>
-<button (click)="loadProducts()">Cargar Productos</button>
-
-<!-- Llamamos al componente product. ngFor itera los resultados -->
-<app-product
-  *ngFor="let product of products"
-  [product]="product">
-</app-product>
+<router-outlet></router-outlet>
+<app-navigation></app-navigation>
